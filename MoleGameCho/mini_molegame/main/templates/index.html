@@ -1,5 +1,12 @@
 {% extends "base.html" %} {% block title %}홈화면{% endblock %} {% block content %}
 <main>
-  <h3>홈</h3>
+  <div id="game-profile">
+    <div class="game-title">두더지</div>
+    <div class="game-title">게임</div>
+    <div id="game-intro">지금까지 이런 두더지 게임은<br>없었다. 이것은 게임인가,<br>벌칙인가? 아무도 모른다.</div>
+    {% load static %}
+    <div id="game-monkey"><img src={% static "image/helloMonkeyClean.webp" %}/></div>
+  </div>
+  <div id="navigation"></div>
 </main>
 {% endblock %}

@@ -21,6 +21,37 @@ footer {
     padding: 0px 10px 5px 10px;
 }
 
+#game-profile {
+    position: relative;
+    padding-top: 90px;
+}
+
+.game-title {
+    font-size: 110px;
+    -webkit-text-stroke: 7px black;
+    /* text-shadow: -7px 0 black, 0 7px black, 7px 0 black, 0 -7px black; */
+    /* letter-spacing: 3px; */
+    line-height: 100px;
+    position: relative;
+    left: 30px;
+
+}
+
+#game-intro {
+    font-size: 15px;
+    line-height: 22px;
+    position: relative;
+    left: 35px;
+    padding-top: 40px;
+}
+
+#game-monkey img {
+    position: absolute;
+    top: 200px;
+    right: 0px;
+    width: 195px;
+    height: 193px;
+}
 
 
 

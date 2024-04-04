@@ -4,10 +4,18 @@
     font-family: "Bagel Fat One", system-ui;
     color: white;
 }
+html, body {
+    width: 100%;
+    overflow: hidden;
+}
+button {
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
 #wrapper {
   margin: 0 auto;
   width: 390px;
- 
   background-color: #5F430B;
 }
 
@@ -23,7 +31,7 @@ footer {
 
 #game-profile {
     position: relative;
-    padding-top: 90px;
+    padding-top: 70px;
 }
 
 .game-title {
@@ -45,13 +53,40 @@ footer {
     padding-top: 40px;
 }
 
-#game-monkey img {
+#game-monkey > img {
     position: absolute;
-    top: 200px;
+    top: 180px;
     right: 0px;
     width: 195px;
     height: 193px;
 }
+
+#navigation {
+    display: flex;
+    justify-content: center;
+    flex: 1 300px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#navigation > button {
+    width: 300px;
+    height: 70px;
+    margin-bottom: 25px;
+    background: #F1C62C;
+    box-shadow: 4px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    font-size: 30px;
+    line-height: 43px;
+    -webkit-text-stroke: 2px black;
+
+}
+
+
+
+
+
 
 
 

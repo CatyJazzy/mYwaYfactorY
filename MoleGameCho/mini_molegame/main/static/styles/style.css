@@ -120,13 +120,14 @@ footer {
 
 .mole-container {
     display: flex;
-    justify-content: space-between;
     margin-top: 15px;
 }
 
 .mole-container > div {
     display: flex;
     align-items: center;
+    font-size: 15px;
+    margin-left: 15px;
 }
 
 .howto-manual img {

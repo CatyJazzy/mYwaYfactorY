@@ -141,11 +141,30 @@ footer {
 
 }
 
+.result-title {
+    font-size: 60px;
+    -webkit-text-stroke: 4px black;
+    text-align: center;
+    padding-top: 40px;
+}
 
+.result-score {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+}
 
+/* 점수 숫자 */
+.result-score > div:first-of-type {
+    font-size: 140px;
+    /* line-height: 200px; */
+    color: #F1C62C;
+    -webkit-text-stroke: 3px white;
+}
 
-
-
-
-
-
+/* 점 글자 */
+.result-score > div:nth-of-type(2) {
+    font-size: 55px;
+    /* line-height: 200px; */
+    -webkit-text-stroke: 3px black;
+}

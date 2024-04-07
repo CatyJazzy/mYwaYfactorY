@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block title %}🎮{% endblock %} {% block content %}
+{% load static %}
+<main>
+    <div id="time-container">
+        <div id="time-title">Time</div>
+        <div id="time-bar">
+            <div id="end-bar">
+                <div>END</div>
+                <div></div>
+            </div>
+            <div id="back-bar">
+                <div id="gauge-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="playground">
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+    </div>
+</main>
+{% endblock %}

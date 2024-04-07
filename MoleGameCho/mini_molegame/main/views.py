@@ -12,3 +12,6 @@ def result1(request):
 
 def result2(request):
     return render(request, 'result2.html')
+
+def play(request):
+    return render(request, 'play.html')

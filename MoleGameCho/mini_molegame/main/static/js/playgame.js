@@ -7,15 +7,20 @@ function shuffle(molesArray) {
 }
 
 function updateScore(point) {
-    user_score += point
+    user_score += point;
+    console.log(user_score);
 }
 
 /* 두더지 출몰 제어 */
-function paintMole(moleType, $normal, $gold, $bomb) {
+function paintMole(moleType, $normal, $gold, $bomb, start) {
+    
+
+    console.log('지연시간: ', Date.now() - start);
+    
     let $targetMole; // 두더지 종류
     let targetLocation = Math.floor(Math.random() * 9) + 1 // 두더지 위치
     const $target_hole = document.querySelector(`#playground > div:nth-child(${targetLocation}) > div:last-of-type`)
-
+    setTimeout(()=>{ $target_hole.removeChild($targetMole)}, 1000)
 
     switch(moleType) {
         case 1:
@@ -29,18 +34,16 @@ function paintMole(moleType, $normal, $gold, $bomb) {
             break;
     }
 
-    // console.log(targetLocation, '--홀 위치')
-    // console.log(targetMole, '--두더지 종류')
-    console.log($target_hole, '--홀 엘리먼트')
-
+    // console.log(targetLocation, '--홀 위치');
+    // console.log($targetMole, '--두더지 종류');
+    // console.log($target_hole, '--홀 엘리먼트');
     $target_hole.appendChild($targetMole);
-    
-
-
 }
 
 
 window.onload = function(){
+    let startTime = Date.now();
+
     /* 두더지 초기배열 생성 */
     let moles_set = Array(14).fill(1).concat(Array(3).fill(2), Array(3).fill(3));
     shuffle(moles_set)
@@ -63,5 +66,11 @@ window.onload = function(){
     $mole_bomb.addEventListener("click", ()=>updateScore(-5))
     $ground = document.querySelector("#playground");
 
-    paintMole(3, $mole_normal, $mole_gold, $mole_bomb);
+    for (let i = 0; i < moles_set.length; i++) {
+        const randomDelay = Math.random() * 3000
+        setTimeout(()=>paintMole(moles_set[i], $mole_normal, $mole_gold, $mole_bomb, startTime), i * 3000 + randomDelay)
+    }
+
+    
+    // paintMole(2, $mole_normal, $mole_gold, $mole_bomb);
 };

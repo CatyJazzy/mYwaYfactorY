@@ -375,7 +375,6 @@ footer {
 @keyframes moleAppear {
     0% {
         transform: translateY(90px);
-        overflow: hidden;
     }
     50% {
         transform: translateY(0px);

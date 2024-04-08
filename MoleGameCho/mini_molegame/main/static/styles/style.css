@@ -343,18 +343,22 @@ footer {
     position: absolute;
     width: 80px;
     height: 90px;
-    bottom: 10px;
+    bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .mole-normal, .mole-gold, .mole-bomb {
     width: 75px;
     height: 90px;
     background-size: cover;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+
+    animation-name: moleAppear;
+    animation-duration: 1s;
 }
 .mole-normal {
     background-image: url("../image/mole_normal.png");
@@ -368,4 +372,16 @@ footer {
     background-image: url("../image/mole_bomb.png");
 }
 
+@keyframes moleAppear {
+    0% {
+        transform: translateY(90px);
+        overflow: hidden;
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(90px);
+    }
+}
 

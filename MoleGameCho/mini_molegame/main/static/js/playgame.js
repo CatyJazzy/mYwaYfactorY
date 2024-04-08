@@ -14,7 +14,7 @@ function updateScore(point) {
 function paintMole(moleType, $normal, $gold, $bomb) {
     let $targetMole; // 두더지 종류
     let targetLocation = Math.floor(Math.random() * 9) + 1 // 두더지 위치
-    const $target_hole = document.querySelector(`#playground > div:nth-child(${targetLocation})`)
+    const $target_hole = document.querySelector(`#playground > div:nth-child(${targetLocation}) > div:last-of-type`)
 
 
     switch(moleType) {

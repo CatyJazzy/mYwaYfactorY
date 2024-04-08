@@ -320,36 +320,43 @@ footer {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 360px;
+    height: 400px;
     place-items: center;
     padding: 80px 0 80px 0;
 }
 
+/* 구멍 구역 */
 .hole {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 구멍 */
+.hole > div:first-of-type {
     width: 80px;
     height: 35px;
     background-color: black;
     border-radius: 100%;
 }
 
-.mole_normal, .mole-gold, .mole-bomb {
+.mole-normal, .mole-gold, .mole-bomb {
     width: 75px;
     height: 90px;
+    background-size: cover;
+    position: absolute;
+    bottom: 10px;
+}
+.mole-normal {
+    background-image: url("../image/mole_normal.png");
 }
 
-.mole_normal {
-    background: url("../image/mole_normal.png");
+.mole-gold {
+    background-image: url("../image/mole_gold.png");
 }
 
-.mole_gold {
-    background: url("../image/mole_gold.png");
+.mole-bomb {
+    background-image: url("../image/mole_bomb.png");
 }
-
-.mole_bomb {
-    background: url("../image/mole_bomb.png");
-}
-
-
-
 
 

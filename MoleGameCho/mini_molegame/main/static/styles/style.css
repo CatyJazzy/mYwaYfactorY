@@ -14,6 +14,11 @@ button {
     outline: none;
     background-color: inherit;
 }
+
+a {
+    text-decoration: none;
+}
+
 #wrapper {
     width: 100%;
     /* height: 100%; 모바일일 때만 적용*/ 
@@ -82,10 +87,6 @@ footer {
     font-size: 30px;
     line-height: 43px;
     -webkit-text-stroke: 2px black;
-}
-
-#navigation a {
-    text-decoration: none;
 }
 
 #howto-title {
@@ -253,13 +254,45 @@ footer {
     border-radius: 20px;
 }
 
+#red-bar {
+    background: #FF0000;
+    border-radius: 20px;
+    width: 0px;
+    height: 15px;
+    position: absolute;
+    left: 10px;
+    animation-name: barexpand;
+    animation-duration: 60s;
+}
+
+@keyframes barexpand {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 200px;
+    }
+}
+
 #end-bar {
     display: inline flex;
     flex-direction: column;
     align-items: center;
-
     position: absolute;
+    left: -5px;
     top: -30px;
+
+    animation-name: timemove;
+    animation-duration: 59s;
+}
+
+@keyframes timemove {
+    from {
+        left: -5px;
+    }
+    to {
+        left: 185px;
+    }
 }
 
 #end-bar > div:first-of-type {
@@ -279,6 +312,8 @@ footer {
     background: #FF0000;
     box-shadow: 4px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    border: 2px solid whitesmoke;
+    z-index: 5;
 }
 
 #playground {

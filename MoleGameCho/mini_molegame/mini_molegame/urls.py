@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('howto', views.howTo, name='howto'),
-    path('awful', views.result1, name='result1'),
+    path('awful/<int:myScore>', views.result1, name='result1'),
     path('great', views.result2, name='result2'),
     path('play', views.play, name='play'),
+    path('result/<int:score>', views.score, name="score")
 ]

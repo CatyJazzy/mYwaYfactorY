@@ -10,12 +10,14 @@ function updateScore(point) {
     user_score += point;
     console.log(user_score);
 }
+let count = 0;
 
 /* 두더지 출몰 제어 */
 function paintMole(moleType, $normal, $gold, $bomb, start) {
     
-
-    console.log('지연시간: ', Date.now() - start);
+    console.log(count, '두더지 실행 차례');
+    count++;
+    // console.log('지연시간: ', Date.now() - start);
     
     let $targetMole; // 두더지 종류
     let targetLocation = Math.floor(Math.random() * 9) + 1 // 두더지 위치
@@ -70,7 +72,28 @@ window.onload = function(){
         const randomDelay = Math.random() * 3000
         setTimeout(()=>paintMole(moles_set[i], $mole_normal, $mole_gold, $mole_bomb, startTime), i * 3000 + randomDelay)
     }
-
-    
     // paintMole(2, $mole_normal, $mole_gold, $mole_bomb);
+
+
+    /* 사용자 점수 비동기 통신 */
+    function sendScore() {
+        let url = `/result/${user_score}`
+    
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST",  url, true);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4){
+                console.log("ajax OK")
+    
+                if(xhr.status == 200) {
+                    console.log("응답 ok")
+                }
+            }
+        }
+        xhr.send()
+        window.location.href = `http://localhost:8000/awful/${user_score}`
+    }
+
+    setTimeout(sendScore, 65000);    
+
 };

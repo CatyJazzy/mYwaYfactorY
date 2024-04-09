@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, HttpResponseRedirect
 
 # Create your views here.
 def home(request):
@@ -7,11 +7,18 @@ def home(request):
 def howTo(request):
     return render(request, 'howto.html')
 
-def result1(request):
-    return render(request, 'result1.html')
+def result1(request, myScore):
+    print('실행됨 ****', myScore)
+    return render(request, 'result1.html', {'score': myScore})
 
 def result2(request):
     return render(request, 'result2.html')
 
 def play(request):
     return render(request, 'play.html')
+
+
+def score(request, score):
+    print('---점수 실험---', score)
+
+    return redirect("result1", score)

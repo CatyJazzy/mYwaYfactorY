@@ -61,6 +61,9 @@ window.onload = function(){
 
     /* 사용자 점수 초기화 */
     user_score = 0;
+    /* 결과 전송 예약 */
+    setTimeout(()=>{window.location.href = `http://localhost:8000/awful/${user_score}`}, 63000)
+
 
     /* 두더지 클릭 이벤트 */
     $mole_normal.addEventListener("click", ()=>updateScore(10))
@@ -73,27 +76,5 @@ window.onload = function(){
         setTimeout(()=>paintMole(moles_set[i], $mole_normal, $mole_gold, $mole_bomb, startTime), i * 3000 + randomDelay)
     }
     // paintMole(2, $mole_normal, $mole_gold, $mole_bomb);
-
-
-    /* 사용자 점수 비동기 통신 */
-    function sendScore() {
-        let url = `/result/${user_score}`
-    
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST",  url, true);
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4){
-                console.log("ajax OK")
-    
-                if(xhr.status == 200) {
-                    console.log("응답 ok")
-                }
-            }
-        }
-        xhr.send()
-        window.location.href = `http://localhost:8000/awful/${user_score}`
-    }
-
-    setTimeout(sendScore, 65000);    
 
 };

@@ -1,35 +1,30 @@
-{% extends "base.html" %} {% block title %}홈화면{% endblock %} {% block content %}
-{% load static %}
+{% extends "base.html" %} {% block title %}홈화면{% endblock %} {% block content %} {% load static %}
 <main>
-    <div id="howto-title">플레이 방법</div>
-    <div class="howto-manual">
-        <div class="yellow-box">
-           두더지 종류
-        </div>
-        <div>
-            <div class="mole-container">
-                <img src={% static "image/mole_normal.png" %}/>
-                <div>일반 두더지<br>10점을 획득할 수 있다. 무난한 두더지.</div>
-            </div>
-            <div class="mole-container">
-                <img src={% static "image/mole_bomb.png" %}/>
-                <div>폭탄 두더지<br>5점을 잃을 수 있다. 눈 잘 뜨고 구별하길.</div>
-            </div>
-            <div class="mole-container">
-                <img src={% static "image/mole_gold.png" %}/>
-                <div>황금 두더지<br>20점을 획득할 수 있다. 간직 그잡채.</div>
-            </div>
-        </div>
+  <div id="howto-title">플레이 방법</div>
+  <div class="howto-manual">
+    <div class="yellow-box">두더지 종류</div>
+    <div>
+      <div class="mole-container">
+        <img src={% static "image/mole_normal.png" %}/>
+        <div>일반 두더지<br />10점을 획득할 수 있다. 무난한 두더지.</div>
+      </div>
+      <div class="mole-container">
+        <img src={% static "image/mole_bomb.png" %}/>
+        <div>폭탄 두더지<br />5점을 잃을 수 있다. 눈 잘 뜨고 구별하길.</div>
+      </div>
+      <div class="mole-container">
+        <img src={% static "image/mole_gold.png" %}/>
+        <div>황금 두더지<br />20점을 획득할 수 있다. 간지 그잡채.</div>
+      </div>
     </div>
-    <div class="howto-manual">
-        <div class="yellow-box">
-            게임 설명
-        </div>
-        <div id="howto-detail">
-            총 60초(1분)의 제한 시간 동안 최대한 두더지를 잡아라.
-            명예의 전당에 나의 최고기록을 등록해 1등에 도전하라.
-            로그인을 하여 나의 점수를 저장할 수 있다.
-        </div>
+  </div>
+  <div class="howto-manual">
+    <div class="yellow-box">게임 설명</div>
+    <div id="howto-detail">
+      총 60초(1분)의 제한 시간 동안 최대한 두더지를 잡아라. 명예의 전당에 나의
+      최고기록을 등록해 1등에 도전하라. 로그인을 하여 나의 점수를 저장할 수
+      있다.
     </div>
+  </div>
 </main>
 {% endblock %}

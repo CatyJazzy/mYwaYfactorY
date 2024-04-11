@@ -62,8 +62,14 @@ window.onload = function(){
     /* 사용자 점수 초기화 */
     user_score = 0;
     /* 결과 전송 예약 */
-    setTimeout(()=>{window.location.href = `http://localhost:8000/awful/${user_score}`}, 63000)
-
+    setTimeout(()=>{
+        if(user_score < 100) {
+            window.location.href = `http://localhost:8000/awful/${user_score}`
+        }
+        else {
+            window.location.href = `http://localhost:8000/great/${user_score}`
+        }
+    }, 63000)
 
     /* 두더지 클릭 이벤트 */
     $mole_normal.addEventListener("click", ()=>updateScore(10))
